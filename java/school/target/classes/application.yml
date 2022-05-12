@@ -1,0 +1,44 @@
+spring:
+  jpa:
+    open-in-view: false
+  thymeleaf:
+    cache: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/university?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+
+    jpa:
+      database: mysql
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+      freemarker:
+        suffix: .ftl
+        settings:
+          classic_compatible: true
+      redis:
+        database: 0
+        port: 6379
+        password: 123456
+        host: localhost
+      elasticsearch:
+        uris: 127.0.0.1:9200
+        username:
+        password:
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  servlet:
+    multipart:
+      max-file-size: 2000MB
+      max-request-size: 2500MB
+
+
+weixin:
+  appid: wx476cab07cfe094df
+  secret: 216084f0d7fd33b0cf1976afe8823023

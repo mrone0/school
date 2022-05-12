@@ -1,0 +1,14 @@
+<!--pages/meishi/meishi.wxml-->
+<view class="shop-item" wx:for="{{meishiList}}" wx:key="id">
+  <view class="thumb">
+    <image src="{{item.image}}"></image>
+  </view>
+  <view class="info">
+    <text class="shop-title">{{item.name}}</text>
+    <text>电话：{{tools.splitPhone(item.phone)}}</text>
+    <text>地址：{{item.address}}</text>
+    <text>营业时间{{item.businesshours}}</text>
+  </view>
+</view>
+
+<wxs src="../../utils/tools.wxs" module="tools"></wxs>

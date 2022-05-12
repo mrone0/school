@@ -1,0 +1,33 @@
+<!--pages/map/map.wxml-->
+<view style="width: 100%; height: 100%;">
+  <map id="map" 
+    subkey="{{subKey}}"
+    style="width: 100%; height: 100%;"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    scale="{{18}}"
+    markers="{{markers}}"
+    circles="{{circles}}"
+    polyline="{{polylines}}"
+    polygons="{{polygons}}"
+    enable-3D="{{enable3d}}"
+    show-location="{{showLocation}}"
+    show-compass="{{showCompass}}"
+    enable-zoom="{{enableZoom}}"
+    enable-rotate="{{enableRotate}}"
+    enable-satellite="{{enableSatellite}}"
+    enable-traffic="{{enableTraffic}}"
+    enable-overlooking="{{enableOverlooking}}"
+    enable-scroll="{{enableScroll}}"
+    bindmarkertap = "handleMarkerTap"
+  >
+  </map>
+  <mp-halfScreenDialog show="{{showDialog}}">
+    <view slot="title">{{currentMarker.properties['name']}}</view>
+    <view slot="desc"></view>
+    <view slot="footer">
+      <button type="primary" class="weui-btn" bindtap="navi1">外部导航</button>
+      <button type="primary" class="weui-btn" bindtap="navi2">内部导航</button>
+    </view>
+  </mp-halfScreenDialog>
+</view>

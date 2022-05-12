@@ -1,0 +1,36 @@
+<!-- 文章区 -->
+<view class="container">
+  <image class='head-image' src='{{articleList.image}}'></image>
+  <text class='title'>{{articleList.title}}</text>
+    <view class='author-date'>
+      <view class='author-box'>
+        <image class='avatar' src='{{articleList.avatar}}'></image>
+        <text class='author'>{{articleList.nickname}}</text>
+      </view>
+      <text class='date'>{{articleList.createtime}}</text>
+    </view>
+    <text class='detail'>{{articleList.content}}</text>
+</view>
+<!-- 评论区 -->
+<view class='tool'>
+ <view class='tool-item' data-post-id="{{post.postId}}">
+       <image src='/images/post/wx_app_view.png'></image>
+       <text>{{post.readingNum}}</text>
+    </view>
+    <view class='tool-item' catchtap='onUpTap' data-post-id="{{post.postId}}">
+       <image wx:if="{{post.upStatus}}" src='/images/post/wx_app_liked.png' animation="{{animationUp}}"></image>
+       <image wx:else src='/images/post/wx_app_like.png' animation="{{animationUp}}"></image>
+       <text>{{post.upNum}}</text>
+    </view>
+    <view class='tool-item comment' catchtap='onCommentTap' data-post-id="{{post.postId}}">
+      <image src='/images/post/wx_app_message.png'></image>
+      <text>{{post.commentNum}}</text>
+    </view>
+    <view class='tool-item' catchtap='onCollectionTap' data-post-id="{{post.postId}}">
+      <image wx:if="{{post.collectionStatus}}" src='/images/post/wx_app_collected.png'></image>
+      <image wx:else src='/images/post/wx_app_collect.png'></image>
+      <text>{{post.collectionNum}}</text>
+    </view> 
+
+
+ </view>

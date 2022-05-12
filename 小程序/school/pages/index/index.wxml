@@ -1,0 +1,20 @@
+<!--pages/index/index.wxml-->
+<!-- 轮播图区域 -->
+ <swiper indicator-dots circular autoplay>
+  <swiper-item wx:for="{{swiperList}}" wx:key="id">
+    <image src="{{item.image}}"></image>
+  </swiper-item>
+</swiper> 
+<!-- 十二宫格区域 -->
+<view class="grid-list">
+  <navigator class="grid-item" wx:for="{{gridList}}" wx:key="id" url="{{item.url}}">
+  <image src="{{item.icon}}"></image> 
+  <text>{{item.name}}</text>
+  </navigator>
+</view>
+
+<!-- 图片区域 -->
+<view class="img-box">
+  <image src="../../images/link-01.png" mode="widthFix"></image>
+  <image src="../../images/link-02.png" mode="widthFix"></image> 
+</view>

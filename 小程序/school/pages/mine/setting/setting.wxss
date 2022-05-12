@@ -1,0 +1,95 @@
+/* pages/mine/setting/setting.wxss */button{
+ 
+    background-color:rgb(255, 26, 26);
+ 
+    border: none;
+ 
+    color: white;
+ 
+    padding: 15px 32px;
+ 
+    text-align: center;
+ 
+    text-decoration: none; 
+ 
+    display:block;
+ 
+    margin:60rpx auto;
+ 
+    font-size: 16px;
+ 
+}
+ 
+.hr{
+ 
+    height: 1rpx;
+ 
+    background-color: rgb(202, 202, 202);
+ 
+}
+ 
+.info{
+ 
+    display: flex;
+ 
+    flex-direction: column;
+ 
+    font-size: 30rpx;
+ 
+    margin-left: 30rpx;
+ 
+    margin-top: 10rpx; 
+ 
+}
+ 
+.info_more1{
+ 
+    display:flex;
+ 
+    justify-content: space-between;
+ 
+    padding-bottom: 20rpx;
+ 
+    padding-top: 20rpx;
+ 
+}
+ 
+.info_more{
+ 
+    display:flex;
+ 
+    justify-content: space-between;
+ 
+    padding-bottom: 30rpx;
+ 
+    padding-top: 30rpx;
+ 
+}
+ 
+.tx{
+ 
+    width: 100rpx;
+ 
+    height: 100rpx;
+ 
+    border-radius: 50%;
+ 
+    margin-right: 10rpx;
+ 
+}
+ 
+.icon{
+ 
+    padding-right: 30rpx;
+ 
+    color: rgb(167, 164, 164);
+ 
+}
+ 
+ 
+ 
+.tx1{
+ 
+    padding-top: 30rpx;
+ 
+}

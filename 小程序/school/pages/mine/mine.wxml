@@ -1,0 +1,59 @@
+<view class="user-container" style="min-height: 100vh; padding-top: {{navBarHeight}}px;">
+  <view class="user-information relative" bindtap="login">
+    <view wx:if="{{userInfo.avatarUrl}}" class="user-information_img" style="background-image: url('{{userInfo.avatarUrl}}')"></view>
+    <image wx:else class="user-information_img" src="../../images/img/avatar.png"></image>
+    <view class="nickname">
+      <view class="user-information_nickname">{{userInfo.nickName?userInfo.nickName:'游客'}}</view>
+      <view class="user-information_introduction">{{userInfo?'欢迎登录!':'点击这里授权登录'}}</view>
+    </view>
+  </view>
+  <view class="user-items">
+
+    <view class="user-item relative">
+      <text class="user-item_text">我的发布</text>
+      <view class="user-item_icon">
+        <image class="user-item_icon_img" src="https://cloud-minapp-16269.cloud.ifanrusercontent.com/my-inform.svg"></image>
+        <view class="user-item_icon_sup" wx:if="{{unreadMessageCount>0}}">{{unreadMessageCount}}</view>
+      </view>
+      <button class="auth-btn" bindtap="fabu"></button>
+    </view>
+
+    <view class="user-item relative">
+      <text class="user-item_text">我的收藏</text>
+      <view class="user-item_icon">
+        <image class="user-item_icon_img" src="https://cloud-minapp-16269.cloud.ifanrusercontent.com/my-like.svg"></image>
+      </view>
+      <button class="auth-btn" bindtap="shouchang"></button>
+    </view>
+
+    <view class="user-item relative">
+      <text class="user-item_text">我的评论</text>
+      <view class="user-item_icon">
+        <image class="user-item_icon_img" src="https://cloud-minapp-16269.cloud.ifanrusercontent.com/my-dynamic.svg"></image>
+      </view>
+      <button class="auth-btn" bindtap="comment"></button>
+    </view>
+
+    <view class="user-item relative">
+      <text class="user-item_text">订阅更新</text>
+      <view class="user-item_icon">
+        <image class="user-item_icon_img" src="../../images/img/subscribe.png"></image>
+      </view>
+      <button  class="auth-btn" bindtap="bindSubscribe"></button>
+    </view>
+    <view class="user-item">
+      <text class="user-item_text">问题反馈</text>
+      <view class="user-item_icon">
+        <image class="user-item_icon_img" src="https://cloud-minapp-16269.cloud.ifanrusercontent.com/feedback.svg"></image>
+      </view>
+      <button class="auth-btn" open-type="contact"></button>
+    </view>
+    <view class="user-item">
+      <text class="user-item_text">个人设置</text>
+      <view class="user-item_icon">
+        <image class="user-item_icon_img" src="https://cloud-minapp-16269.cloud.ifanrusercontent.com/small-logo-gray-with-radius.svg"></image>
+      </view>
+      <button class="auth-btn" bindtap="setting"></button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,88 @@
+<!--pages/mine/setting/setting.wxml-->
+<view class="info">
+ 
+ <view class="info_more1"><view class="tx1">头像</view>
+
+ <view><image src="{{tx}}" class="tx"/></view>
+
+ </view>
+
+<view class="hr"></view>
+
+
+
+<view class="info_more">昵称
+
+ <view class="icon">{{name}}</view>
+
+ </view>
+
+<view class="hr"></view>
+
+
+
+<view class="info_more" >手机号
+
+ <view class="icon">{{addressInfo.telNumber}}</view>
+
+ </view>
+
+<view class="hr"></view>
+<view class="info_more" bindtap="houtai">学号
+
+<view class="icon">193****</view>
+
+</view>
+<view class="hr"></view>
+
+
+<view class="info_more">生日
+
+ <view class="icon"><picker class="picker" mode="date" value="{{date}}"end="{{endDate}}" bindchange="bindDateChange">
+
+ <view class="picker-date ">
+
+   {{currentDate}}
+
+ </view>
+
+</picker></view>
+
+ </view>
+
+<view class="hr"></view>
+
+
+
+<view class="info_more" bindtap="chooseAddress">收货地址
+
+ <view class="icon">{{addressInfo.provinceName}}</view>
+
+ </view>
+
+<view class="hr"></view>
+
+
+
+<view class="info_more" bindtap="version">当前版本
+
+ <view class="icon">v1.0</view>
+
+ </view>
+
+<view class="hr"></view>
+
+
+
+<view class="info_more" bindtap="about">关于
+
+ <view class="icon"></view>
+
+ </view>
+
+<view class="hr"></view>
+
+
+</view>
+
+<button bindtap="logout">退出登录</button>

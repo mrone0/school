@@ -1,0 +1,10 @@
+<!-- 引入文章列表组件 -->
+<import src="../post-item/post-item-tpl.wxml"/>
+
+<view>
+  <block wx:for="{{YishiList}}" wx:key="id" wx:for-item="item" wx:for-index="idx">
+  <view catchtap="onTapToDetail" data-id="{{item.id}}" >
+    <template  is="postItemTpl" data="{{...item}}"></template>
+  </view>
+</block>
+</view>

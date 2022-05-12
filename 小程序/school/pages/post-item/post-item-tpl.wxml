@@ -1,0 +1,27 @@
+<template name="postItemTpl">
+ <view class='post-container'>
+    <view class='post-author-date'>
+      <image src='{{avatar}}'></image>
+      <view>
+      <text class='post-author'>{{nickname}}</text>
+      <text class='post-date'>{{createtime}}</text>
+      </view>
+    </view>
+    <text class='post-title'>{{title}}</text>
+    <image mode='aspectFill' class='post-image' src='{{image}}'></image>
+    <text class='post-content'>{{content}}</text>
+    <view class='post-like'>
+    <image src='/images/post/wx_app_view.png'></image>
+      <text>{{readingNum}}</text>
+      <image src='/images/post/wx_app_like.png'></image>
+      <text>{{upNum}}</text>
+       <image src='/images/post/wx_app_message.png'></image>
+      <text>{{commentNum}}</text>
+      <image src='/images/post/wx_app_collect.png'></image>
+      <text>{{collectionNum}}</text>
+     
+    </view>
+  </view>
+
+
+</template>

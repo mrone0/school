@@ -1,0 +1,115 @@
+/* pages/jianzhi/jianzhi.wxss *//* pages/ershou/ershou.wxss */
+/* 引入文章列表组件的css
+ */
+ @import "../../post-item/post-item-tpl.wxss";
+ 
+ swiper{
+   width: 100%;
+   height: 600rpx;
+ }
+ swiper image{
+   width: 100%;
+   height:600rpx;
+ }
+ 
+ .container {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ /* 图片 */
+ .head-image {
+   width: 100%;
+   height: 400rpx;
+ }
+ 
+ /* 头像区域 */
+ .author-date {
+   display: flex;
+   flex-direction: row;
+   margin-top: 20rpx;
+   margin-left: 32rpx;
+   align-items: center;
+ }
+ 
+ .avatar {
+   width: 64rpx;
+   height: 64rpx;
+ }
+ 
+ .author {
+   font-size: 30rpx;
+   font-weight: 300;
+   margin-left: 20rpx;
+   color: #666;
+ }
+ 
+ .const-text {
+   font-size: 24rpx;
+   color: #999;
+   margin-left: 20rpx;
+ }
+ 
+ .date {
+   font-size: 24rpx;
+   color: #999;
+   margin-left: 30rpx;
+ }
+ 
+ /* 标题 */
+ .title {
+   margin-left: 40rpx;
+   font-size: 36rpx;
+   font-weight: 30rpx;
+   margin-top: 30rpx;
+   color: #4b556c;
+   letter-spacing: 2px;
+ }
+ 
+ /* 图标 */
+ .tool {
+   display: flex;
+   /* 设置主轴 */
+   flex-direction: column;
+   /* 侧轴排列方式 */
+   align-items: center;
+   /* 垂直居中 主轴排列方式  */
+   justify-content: center;
+ }
+ 
+ .circle {
+   display: flex;
+   width: 660rpx;
+   justify-content: flex-end;
+ }
+ 
+ .circle image {
+   width: 90rpx;
+   height: 90rpx;
+ }
+ 
+ .circle image:last-child {
+   margin-left: 20rpx;
+ }
+ 
+ .horizon {
+   width: 660rpx;
+   height: 1px;
+   background-color: #e5e5e5;
+   position: absolute;
+   z-index: -1;
+ }
+ /* 文本 */
+ .detail{
+   /* display: block; */
+   color:#666;
+   margin-left: 30rpx;
+   margin-top: 20rpx;
+   margin-right: 30rpx;
+    line-height: 44rpx;
+   letter-spacing: 2px;
+    width: 90%;
+   /* height: 200rpx;  */
+   text-indent: 2em;
+ }
+ 

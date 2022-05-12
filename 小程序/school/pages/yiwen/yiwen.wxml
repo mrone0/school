@@ -1,0 +1,50 @@
+<!-- 引入文章列表组件 -->
+<import src="../post-item/post-item-tpl.wxml"/>
+
+<view>
+  <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
+    <swiper-item><image src='' data-post-id='1'></image></swiper-item>
+  </swiper>
+  <block wx:for="{{QuestionList}}" wx:key="id" wx:for-item="item" wx:for-index="idx">
+  <view catchtap="onTapToDetail" data-id="{{item.id}}" >
+    <template  is="postItemTpl" data="{{...item}}"></template>
+  </view>
+</block>
+</view>
+
+
+
+
+
+
+
+
+<!-- 先静后动 -->
+<!-- <view class="container" wx:for="{{QuestionList}}" wx:key="id" data-id="{{id}}" bindtap="onGoToDetail">
+  <image class="head-image" src="{{item.image}}"></image> -->
+
+  <!-- 头像区域 -->
+  <!-- <view class="author-date" >
+    <image class="avatar" src="{{item.avatar}}"></image>
+    <text class="author">{{item.nickname}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{item.createtime}}</text>
+  </view> -->
+  <!-- 标题 -->
+  <!-- <text class="title">
+  {{item.title}}
+  </text> -->
+
+  <!-- 图标 -->
+  <!-- <view class="tool">
+    <view class="circle">
+      <image src="../../images/shoucang.png"></image>
+      <image class="share-image" src="../../images/fenxiang.png"></image>
+    </view> -->
+    <!-- 水平线 -->
+    <!-- <view class="horizon"></view>
+  </view> -->
+
+  <!-- 文章文本 -->
+  <!-- <text class="detail">{{item.content}}</text>
+</view> -->

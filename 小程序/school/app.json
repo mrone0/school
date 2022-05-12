@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fatie/fatie",
+    "pages/mine/mine",
+    "pages/daohang/daohang",
+    "pages/map/map",
+    "pages/ershou/ershou",
+    "pages/tiezi/tiezi",
+    "pages/jianzhi/jianzhi",
+    "pages/jiaoshi/jiaoshi",
+    "pages/meishi/meishi",
+    "pages/nongchang/nongchang",
+    "pages/taolun/taolun",
+    "pages/tushuguan/tushuguan",
+    "pages/yishi/yishi",
+    "pages/yiwen/yiwen",
+    "pages/mine/setting/setting",
+    "pages/about/about",
+    "pages/mine/fabu/fabu",
+    "pages/mine/comment/comment",
+    "pages/detail/detail",
+    "pages/post-item/post-item-tpl",
+    "pages/post-comment/post-comment"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#2b4490",
+    "navigationBarTitleText": "锦城校园助手",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "onReachBottomDistance": 10
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tab/home.png",
+        "selectedIconPath": "/images/tab/home_on.png"
+      },
+      {
+        "pagePath": "pages/fatie/fatie",
+        "text": "发布",
+        "iconPath": "/images/tab/putongfatie.png",
+        "selectedIconPath": "/images/tab/putongfatie_1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "/images/tab/user.png",
+        "selectedIconPath": "/images/tab/user_on.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "plugins": {
+    "routePlan": {
+      "version": "1.0.19",
+      "provider": "wx50b5593e81dd937a"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "darkmode": true,
+  "useExtendedLib": {
+    "weui": true
+  }
+}
