@@ -22,6 +22,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.time.Duration;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -95,9 +96,10 @@ public class CheckSignatureController {
             wxMssVO.setTemplate_id(messagepush.getTemplateId());//模板id
             wxMssVO.setPage("pages/index/index");
 
+            Date date =new Date();
             Map<String, TemplateData> m = new HashMap<>(5);
             m.put("thing2", new TemplateData(messagepush.getTitle()));
-            m.put("date3", new TemplateData(datetime.GeLin(messagepush.getAtime())));
+            m.put("date3", new TemplateData(datetime.GeLin(date)));
             m.put("thing10", new TemplateData(messagepush.getAddress()));
             m.put("thing12", new TemplateData(messagepush.getSponsor()));
             m.put("thing4", new TemplateData(messagepush.getDescription()));

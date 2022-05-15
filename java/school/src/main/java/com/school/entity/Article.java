@@ -1,11 +1,15 @@
 package com.school.entity;
 
+
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.school.config.LocalDateTimeSerializerConfig;
+import lombok.SneakyThrows;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.Date;
 
 /**
@@ -155,8 +159,10 @@ public class Article implements Serializable {
     /**
      * 
      */
-    public Date getCreatetime() {
-        return createtime;
+    public String getCreatetime() throws ParseException {
+        LocalDateTimeSerializerConfig config =new LocalDateTimeSerializerConfig();
+        String s = config.GeLin(createtime);
+        return s;
     }
 
     /**
@@ -208,6 +214,7 @@ public class Article implements Serializable {
         this.nickname = nickname;
     }
 
+    @SneakyThrows
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -232,6 +239,7 @@ public class Article implements Serializable {
             && (this.getNickname() == null ? other.getNickname() == null : this.getNickname().equals(other.getNickname()));
     }
 
+    @SneakyThrows
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -269,4 +277,6 @@ public class Article implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+
 }

@@ -1,8 +1,10 @@
 package com.school.util;
 
 import com.alibaba.fastjson.JSONObject;
+import com.auth0.jwt.JWT;
 import com.school.entity.Weixin;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,7 +23,7 @@ public class JwtUtil {
         public String getToken (String openid, String session_key){
             Date nowDate = new Date();
             //过期时间
-            Date expireDate = new Date(nowDate.getTime() + expire * 100);
+            Date expireDate = new Date(nowDate.getTime() + expire * 1000);
             Map<String,Object> maps = new HashMap<>();
             maps.put("openid",openid);
             maps.put("sessionKey",session_key);

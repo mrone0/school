@@ -21,6 +21,7 @@ public class YiShiController {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.like("tag","失物招领");
         List<Article> list = articleMapper.selectList(wrapper);
+        System.out.println(list);
         return list;
     }
 }

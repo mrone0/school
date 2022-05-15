@@ -9,7 +9,7 @@
       </view>
       <text class='date'>{{articleList.createtime}}</text>
     </view>
-    <text class='detail'>{{articleList.content}}</text>
+    <textarea class='detail'>{{articleList.content}}</textarea>
 </view>
 <!-- 评论区 -->
 <view class='tool'>

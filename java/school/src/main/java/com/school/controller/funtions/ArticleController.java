@@ -46,7 +46,7 @@ public class ArticleController {
 
         Date date = new Date();
         Result res = new Result();
-        article.setCreatetime(date);
+        article.setCreatetime( date);
         int insert = articleMapper.insert(article);
         if(insert==1){
             res.setCode(200);

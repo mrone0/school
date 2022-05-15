@@ -46,7 +46,6 @@ public class MyInterceptor implements HandlerInterceptor {
 
         //检查有没有需要用户权限的注解
         //如果有注解Authorize，就需要验证token
-
         String token = request.getHeader("authorization");// 从 http 请求头中取出 token
         // 执行认证
         if (token == null) {
@@ -71,7 +70,7 @@ public class MyInterceptor implements HandlerInterceptor {
             if (weixin == null) {
                 throw new RuntimeException("用户不存在，请重新登录");
             }else {
-                request.setAttribute("openid",weixin.getOpenId());
+                request.setAttribute("openid",openid);
             }
 
 //            try {

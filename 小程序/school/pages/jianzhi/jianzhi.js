@@ -131,7 +131,6 @@ Page({
     //获取当前文章的id
     var postId=event.currentTarget.dataset.id;
     
-    console.log(postId);
     wx.navigateTo({
       url: '../detail/detail?id='+postId,
     })

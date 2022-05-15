@@ -46,6 +46,8 @@
   margin-right: 30rpx;
 }
 .detail{
+  word-wrap: break-word;
+  word-break: normal;
   color:#666;
   margin:40rpx 30rpx 0;
   line-height: 44rpx;

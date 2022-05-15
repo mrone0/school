@@ -21,6 +21,7 @@ public class JianZhiController {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.like("tag","兼职");
         List<Article> list = articleMapper.selectList(wrapper);
+        System.out.println(list);
         return list;
     }
 }
