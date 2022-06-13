@@ -18,9 +18,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.setData({
-      query:options
-    })
     if(!wx.getStorageSync('token')){
       wx.showToast({
         icon: "error",
@@ -31,6 +28,9 @@ Page({
     {
       this.getJianZhiList()
     }
+    this.setData({
+      query:options
+    })
   },
   getJianZhiList(cb){
     wx.showLoading({
@@ -40,14 +40,17 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/jianzhi',
+      url: 'https://mrone.vip/wx/jianzhi',
       header: {
         "authorization": wx.getStorageSync("token")
       },
       method: 'GET',
+      data:{
+        current:this.data.page
+      },
       success: (res) =>{
         this.setData({
-          JianZhiList: res.data
+          JianZhiList: res.data.records
         })
       },
       complete: () =>{

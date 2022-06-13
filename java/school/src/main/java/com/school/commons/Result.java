@@ -17,6 +17,8 @@ public class Result<T> {
 
     //结果数据
     T data;
+    //结果数据二
+    T data2;
 
     public Result() {
     }
@@ -32,6 +34,13 @@ public class Result<T> {
         this.data = data;
     }
 
+    public Result(ResultCode resultCode,T data, T data2){
+        this.code=resultCode.code();
+        this.message=resultCode.message();
+        this.data=data;
+        this.data2=data2;
+    }
+
     public Result(String message) {
         this.message = message;
     }
@@ -43,6 +52,11 @@ public class Result<T> {
     public static <T> Result SUCCESS(T data) {
         return new Result(ResultCode.SUCCESS, data);
     }
+
+    public static <T> Result SUCCESS2(T data2) {
+        return new Result(ResultCode.SUCCESS, data2);
+    }
+
 
     public static Result FAIL() {
         return new Result(ResultCode.FAIL);

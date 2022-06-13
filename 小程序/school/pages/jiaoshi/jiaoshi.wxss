@@ -1,1 +1,14 @@
 /* pages/jiaoshi/jiaoshi.wxss */
+.text{
+  text-indent: 60rpx;
+  margin-top: 10rpx;
+  line-height: 90rpx;
+}
+
+.click{
+  width: 100%;
+  text-align: center;
+  font-size: 50rpx;
+  padding-top: 220rpx;
+  color: rgb(13, 92, 156);
+}

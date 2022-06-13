@@ -40,11 +40,6 @@ public class User implements Serializable {
     private Long number;
 
     /**
-     * 头像
-     */
-    private String avatar;
-
-    /**
      * 电话
      */
     private String phone;
@@ -58,6 +53,11 @@ public class User implements Serializable {
      * 生日
      */
     private String birthday;
+
+    /**
+     * 唯一标识符
+     */
+    private String openid;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -133,20 +133,6 @@ public class User implements Serializable {
     }
 
     /**
-     * 头像
-     */
-    public String getAvatar() {
-        return avatar;
-    }
-
-    /**
-     * 头像
-     */
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    /**
      * 电话
      */
     public String getPhone() {
@@ -188,6 +174,20 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
+    /**
+     * 唯一标识符
+     */
+    public String getOpenid() {
+        return openid;
+    }
+
+    /**
+     * 唯一标识符
+     */
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -205,10 +205,10 @@ public class User implements Serializable {
             && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
             && (this.getSchool() == null ? other.getSchool() == null : this.getSchool().equals(other.getSchool()))
             && (this.getNumber() == null ? other.getNumber() == null : this.getNumber().equals(other.getNumber()))
-            && (this.getAvatar() == null ? other.getAvatar() == null : this.getAvatar().equals(other.getAvatar()))
             && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
             && (this.getAddress() == null ? other.getAddress() == null : this.getAddress().equals(other.getAddress()))
-            && (this.getBirthday() == null ? other.getBirthday() == null : this.getBirthday().equals(other.getBirthday()));
+            && (this.getBirthday() == null ? other.getBirthday() == null : this.getBirthday().equals(other.getBirthday()))
+            && (this.getOpenid() == null ? other.getOpenid() == null : this.getOpenid().equals(other.getOpenid()));
     }
 
     @Override
@@ -220,10 +220,10 @@ public class User implements Serializable {
         result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
         result = prime * result + ((getSchool() == null) ? 0 : getSchool().hashCode());
         result = prime * result + ((getNumber() == null) ? 0 : getNumber().hashCode());
-        result = prime * result + ((getAvatar() == null) ? 0 : getAvatar().hashCode());
         result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
         result = prime * result + ((getAddress() == null) ? 0 : getAddress().hashCode());
         result = prime * result + ((getBirthday() == null) ? 0 : getBirthday().hashCode());
+        result = prime * result + ((getOpenid() == null) ? 0 : getOpenid().hashCode());
         return result;
     }
 
@@ -238,10 +238,10 @@ public class User implements Serializable {
         sb.append(", username=").append(username);
         sb.append(", school=").append(school);
         sb.append(", number=").append(number);
-        sb.append(", avatar=").append(avatar);
         sb.append(", phone=").append(phone);
         sb.append(", address=").append(address);
         sb.append(", birthday=").append(birthday);
+        sb.append(", openid=").append(openid);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

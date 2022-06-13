@@ -56,7 +56,7 @@ Page({
             addressInfo: res
           })
           wx.request({
-            url: 'http://127.0.0.1:8080/wx/userinfo',
+            url: 'https://mrone.vip/wx/userinfo',
             method:'POST',
             header: {
               'Content-Type': 'application/x-www-form-urlencoded',
@@ -149,12 +149,19 @@ Page({
  
  
   },
+
+  onReady() {
+    wx/wx.setNavigationBarTitle({
+      title: '设置',
+    })
+  },
  
   logout:function() {
  
     wx.removeStorage({
  
       key: 'userInfo',
+      key: 'token',
  
       success (res) {
  

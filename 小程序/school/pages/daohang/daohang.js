@@ -41,7 +41,7 @@ Page({
       title: '正在加载数据',
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/daohang1',
+      url: 'https://mrone.vip/wx/daohang1',
       method: 'GET',
       header: {
         "authorization": wx.getStorageSync('token')

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.school.mapper.CommentDtoMapper">
+
+    <select id="findCommentById" resultType="com.school.dto.CommentDto">
+        SELECT b.*,a.nick_name,a.avatar_url FROM tb_weixin a JOIN comment b ON a.open_id=b.openid
+        WHERE b.aid=#{aid}
+    </select>
+
+    <select id="findUserCommentByOpenid" resultType="com.school.dto.CommentDto">
+        SELECT b.*,a.nick_name,a.avatar_url,c.title FROM tb_weixin a JOIN comment b
+        ON a.open_id=b.openid
+        LEFT JOIN article c on
+        b.aid=c.id AND b.openid=c.openid
+        WHERE b.openid=#{openid}
+    </select>
+
+</mapper>

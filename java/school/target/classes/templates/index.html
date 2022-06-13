@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>一字先生</title>
+    <link rel="stylesheet" href="../static/css/aboutme.css" />
+      <link rel="shortcut icon" href="../static/image/favicon.ico">
+
+      <style>
+          @font-face {
+              font-family: "ziti1";
+              src: url(../static/font/Mengshen-Handwritten.ttf);
+          }
+      html {
+        height: 100%;
+      }
+      * {
+        height: 100%;
+      }
+      .box1{
+          height: 42%;
+          background: url(../static/image/bg3.jpg);
+          background-size: contain;
+      }
+
+      .box1_1{
+
+            height: 17%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            z-index: 5;
+            font-size: 13px;
+        line-height: 50px;
+
+        }
+        .box1_1_left{
+            color: #fff2f2;
+            margin: auto 28px;
+            align-items: center;
+
+
+        }
+        .box1_1_right{
+
+           margin-right: 50px;
+            color: #fff2f2;
+        }
+        .box1_1_right li{
+           float: left;
+           padding: 0 20px 0 10px;
+        }
+      .box1_1_right li a{
+          color: #fff2f2;
+          text-decoration: none;
+      }
+
+      .box1_2 {
+          font-family: ziti1;
+        text-align: center;
+        font-size: 41px;
+        height: 83%;
+        line-height: 730%;
+        color: #fff;
+      }
+
+      .box2 {
+        width: 100%;
+        height: 42%;
+        background-image: linear-gradient(to right,rgb(253,243,233), rgb(241,239,246),rgb(239,248,243));
+      }
+      .box2_1{
+          box-sizing: border-box;
+          width: 50%;
+          height: 70%;
+          background-color: #fff;
+          margin: 0 auto;
+          transform: translateY(30px);
+          border-radius: 2%;
+          box-shadow: 1px 1px 3px #888888;
+          position: relative;
+
+      }
+
+      .box2_1 img{
+          position: absolute;
+          left: 50%;
+        height: 100px;
+          transform: translate(-50%,10%);
+      }
+      .box2_1 p{
+          position: absolute;
+          
+          top: 55%;
+          left: 5%;
+        height: 100px;
+        font-size: 13px;
+        line-height: 24px;
+       
+      }
+      
+      .box3 {
+        width: 100%;
+        height: 16%;
+        background-image: linear-gradient(to right,rgb(35,200,183), rgb(35,171,210));
+      }
+      .box3 p {
+        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        padding-top: 30px;
+        box-sizing: border-box;
+        font-size: 16px;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+        <div class="box1_1">
+            <div class="box1_1_left">一字先生</div>
+        </div>
+    
+      <div class="box1_2">关于我</div>
+    </div>
+    <div class="box2">
+        <div class="box2_1">
+            
+                <img src="../static/image/avatar.jpg" alt="图片">
+                <p>个人简介
+                    <br>
+                    欢迎大家搜索并使用锦城校园助手，还在学习中，请多鼓励！
+
+                    一只想过的无忧无虑的大三狗
+                    <br>
+                    如果你要为错过太阳流泪，那么你也要错过群星了。
+                </p>
+            
+        
+        </div>
+    </div>
+    <div class="box3">
+      <p>2022 - 2022 By Mr.One <br/>蜀ICP备2022012496号-1</p>
+    </div>
+  </body>
+</html>

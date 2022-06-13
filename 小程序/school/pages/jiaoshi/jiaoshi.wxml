@@ -1,2 +1,5 @@
 <!--pages/jiaoshi/jiaoshi.wxml-->
-<text>pages/jiaoshi/jiaoshi.wxml</text>
+<view>
+<textarea class="text">亲爱的同学们，经过我们的不懈努力，最终还是未能拿到学校的认可，无法直接对接学校的教务系统，在此奉上我们最高的敬意</textarea>
+</view>
+<view bindtap="class" class="click"> 进入教务网</view>

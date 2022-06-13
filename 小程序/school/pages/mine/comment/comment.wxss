@@ -1,1 +1,66 @@
 /* pages/mine/comment/comment.wxss */
+page{
+  margin: 0;
+}
+.box {
+  margin-top: 10px;
+  width: 100%;
+}
+.img {
+  padding-top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.box1 {
+  display: flex;
+  height: 50px;
+}
+.box1_1 {
+  width: 40px;
+}
+.box1_2 {
+  padding-left: 6px;
+  font-size: 14px;
+  line-height: 16px;
+  padding-top: 14px;
+  flex: 1;
+}
+.text{
+  display: block;
+}
+.box1_3 {
+  width: 60px;
+  
+  padding-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  color: aqua;
+}
+.box1_3:active{
+  color:deepskyblue;
+}
+
+.box2 {
+  height: 60px;
+
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.box3 {
+  height: 60px;
+  width: 100%;
+  text-align: center;
+}
+.box3 text{
+  width: 90%;
+  height: 80%;
+  background-color: rgb(228, 228, 228);
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 5px;
+  line-height: 48px;
+  overflow: hidden;
+  
+}

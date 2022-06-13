@@ -21,23 +21,23 @@ Page({
       })
     }else
     {
-      this.getLibraryList()
+      // this.getLibraryList()
     }
   },
-  getLibraryList(){
-    wx.request({
-      url: 'http://127.0.0.1:8080/wx/library',
-      header: {
-        "authorization": wx.getStorageSync("token")
-      },
-      method: 'GET',
-      success: (res) =>{
-        this.setData({
-          swiperList: res.data
-        })
-      }
-    })
-  },
+  // getLibraryList(){
+  //   wx.request({
+  //     url: 'https://mrone.vip/wx/library',
+  //     header: {
+  //       "authorization": wx.getStorageSync("token")
+  //     },
+  //     method: 'GET',
+  //     success: (res) =>{
+  //       this.setData({
+  //         swiperList: res.data
+  //       })
+  //     }
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

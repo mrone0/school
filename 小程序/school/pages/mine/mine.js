@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: "",
+    user: "",
     encryptedData: "",
     iv: "",
     tmplIds:[]
@@ -21,7 +21,7 @@ Page({
       let user=res.userInfo
       wx.setStorageSync('user', user)
       this.setData({
-      userInfo:user,
+      user:user,
       encryptedData: res.encryptedData,
         iv: res.iv
       })
@@ -31,7 +31,7 @@ Page({
         success:(res)=>{
           if(res.code){
             wx.request({
-              url: 'http://127.0.0.1:8080/wx/login',
+              url: 'https://mrone.vip/wx/login',
               method:'POST',
               header:{
                 'content-type':'application/x-www-form-urlencoded',
@@ -127,7 +127,7 @@ Page({
     wx.checkSession({
       success: (res) => {
         // 判断是否有token,有token 说明通过了用户验证
-        var token = wx.getStorageSync('accessToken')
+        var token = wx.getStorageSync('token')
         if(token===null || token===undefined || token ==='') {
             // 不含有token
         } 
@@ -247,13 +247,13 @@ Page({
       tmplIds: ['dHxDyWWxBnRxKoFdW8SelOfSSbnrCvnjvUTtMF4Tij4'], //这里填入我们生成的模板id
       success(res) {
         wx.request({
-          url: 'http://127.0.0.1:8080/wx/token',
+          url: 'https://mrone.vip/wx/token',
           header: {
             "authorization": wx.getStorageSync('token')
           },
           success(res){
             wx.request({
-              url: 'http://127.0.0.1:8080/wx/push',
+              url: 'https://mrone.vip/wx/push',
               header: {
                 "authorization": wx.getStorageSync('token')
               },

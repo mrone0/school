@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userCommentList:[]
   },
 
   /**
@@ -20,8 +20,25 @@ Page({
       })
     }else
     {
+      this.getUserCommentList()
     }
 
+  },
+
+  getUserCommentList(){
+    wx.request({
+      url: 'https://mrone.vip/wx/user/comment',
+      method:'POST',
+      header: {
+        "authorization": wx.getStorageSync("token"),
+      },
+      method:'POST',
+      success: (res) =>{
+        this.setData({
+          userCommentList: res.data
+        })
+      },
+    })
   },
 
   /**
@@ -71,5 +88,56 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  delete:function(event){
+    var aid=event.currentTarget.dataset.aid;
+    var id=event.currentTarget.dataset.id
+    wx.showModal({
+      title: '提示',
+      content: '确定删除吗',
+      cancelText:'取消',
+      confirmText:'删除',
+      confirmColor:'#000000',
+      cancelColor:'#576b95',
+      success (res) {
+        if (res.confirm) {
+          wx.request({
+            url: 'https://mrone.vip/wx/user/comment/del',
+            method: 'GET',
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              "authorization": wx.getStorageSync("token")
+            },
+            data:{
+              aid:aid,
+              id:id
+            },
+            success(res){
+              if(res.data.code==0){
+                wx.showToast({
+                  title: '删除成功',
+                })
+              }else{
+                wx.showToast({
+                  icon:'error',
+                  title: '删除失败',
+                })
+              }
+          }
+        })
+        } else if (res.cancel) {
+        }
+      }
+    })
+  },
+ 
+  detail:function(event){
+        //获取当前文章的id
+        var postId=event.currentTarget.dataset.id;
+        wx.navigateTo({
+          url: '../../../pages/detail/detail?id='+postId,
+        })
   }
 })
+

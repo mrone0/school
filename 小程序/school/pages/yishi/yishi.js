@@ -40,14 +40,17 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/yishi',
+      url: 'https:mrone.vip/wx/yishi',
       header: {
         "authorization": wx.getStorageSync("token")
+      },
+      data:{
+        current:this.data.page
       },
       method: 'GET',
       success: (res) =>{
         this.setData({
-          YishiList: res.data
+          YishiList: res.data.records
         })
       },
       complete: () =>{

@@ -13,31 +13,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    if(!wx.getStorageSync('token')){
-      wx.showToast({
-        icon: "error",
-        duration: 1500,
-        title: '登录解锁',
-      })
-    }else
-    {
-      this.getClassList()
-    }
+    // if(!wx.getStorageSync('token')){
+    //   wx.showToast({
+    //     icon: "error",
+    //     duration: 1500,
+    //     title: '登录解锁',
+    //   })
+    // }else
+    // {
+    //   // this.getClassList()
+    // }
   },
-  getClassList(){
-    wx.request({
-      url: 'http://127.0.0.1:8080/wx/class',
-      header: {
-        "authorization": wx.getStorageSync("token")
-      },
-      method: 'GET',
-      success: (res) =>{
-        this.setData({
-          ClassList: res.data
-        })
-      }
-    })
-  },
+  // getClassList(){
+  //   wx.request({
+  //     url: 'http://127.0.0.1:8080/wx/class',
+  //     header: {
+  //       "authorization": wx.getStorageSync("token")
+  //     },
+  //     method: 'GET',
+  //     success: (res) =>{
+  //       this.setData({
+  //         ClassList: res.data
+  //       })
+  //     }
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -86,5 +86,10 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  class(){
+    wx.navigateTo({
+      url: '/pages/about/about',
+    })
   }
 })

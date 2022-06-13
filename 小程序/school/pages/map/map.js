@@ -155,7 +155,6 @@ Page({
   },
 
   handleMarkerTap(e) {
-    console.log(e);
     const marker = this.data.markers.find(item => item.id == e.detail.markerId);
     marker && this.setData({
       currentMarker: marker,

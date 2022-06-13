@@ -1,2 +1,21 @@
 <!--pages/mine/comment/comment.wxml-->
-<text>pages/mine/comment/comment.wxml</text>
+<view class="box" wx:for="{{userCommentList}}" wx:key="id">
+  <view class="box1">
+    <view class="box1_1">
+      <image class="img" src="{{item.avatarurl}}"></image>
+    </view>
+    <view class="box1_2">
+      <text class="text">{{item.nickname}}</text>
+      <text class="text">{{item.time}}</text>
+    </view>
+    <view class="box1_3">
+      <text bindtap="delete" data-id="{{item.id}}" data-aid="{{item.aid}}">删除</text>
+    </view>  
+  </view>
+  <view class="box2">
+  <text>{{item.comment}}</text>
+  </view>
+  <view class="box3">
+  <text class="text" bindtap="detail" data-id="{{item.aid}}">{{item.title}}</text>
+  </view>
+</view>

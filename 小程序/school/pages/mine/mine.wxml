@@ -1,10 +1,10 @@
 <view class="user-container" style="min-height: 100vh; padding-top: {{navBarHeight}}px;">
   <view class="user-information relative" bindtap="login">
-    <view wx:if="{{userInfo.avatarUrl}}" class="user-information_img" style="background-image: url('{{userInfo.avatarUrl}}')"></view>
+    <view wx:if="{{user.avatarUrl}}" class="user-information_img" style="background-image: url('{{user.avatarUrl}}')"></view>
     <image wx:else class="user-information_img" src="../../images/img/avatar.png"></image>
     <view class="nickname">
-      <view class="user-information_nickname">{{userInfo.nickName?userInfo.nickName:'游客'}}</view>
-      <view class="user-information_introduction">{{userInfo?'欢迎登录!':'点击这里授权登录'}}</view>
+      <view class="user-information_nickname">{{user.nickName?user.nickName:'游客'}}</view>
+      <view class="user-information_introduction">{{user?'欢迎登录!':'点击这里授权登录'}}</view>
     </view>
   </view>
   <view class="user-items">
@@ -19,11 +19,12 @@
     </view>
 
     <view class="user-item relative">
+      <button class="auth-btn" bindtap="shouchang"></button>
+
       <text class="user-item_text">我的收藏</text>
       <view class="user-item_icon">
         <image class="user-item_icon_img" src="https://cloud-minapp-16269.cloud.ifanrusercontent.com/my-like.svg"></image>
       </view>
-      <button class="auth-btn" bindtap="shouchang"></button>
     </view>
 
     <view class="user-item relative">

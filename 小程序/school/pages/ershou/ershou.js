@@ -11,7 +11,6 @@ Page({
     page: 1,
     pagesize: 10,
     isonloading: false
-
   },
 
   /**
@@ -40,14 +39,17 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/ershou',
+      url: 'https://mrone.vip/wx/ershou',
       header: {
         "authorization": wx.getStorageSync("token")
       },
       method: 'GET',
+      data:{
+        current:this.data.page
+      },
       success: (res) =>{
         this.setData({
-          ErShouList: res.data
+          ErShouList: res.data.records
         })
       },
       complete: () =>{
@@ -131,7 +133,6 @@ Page({
     //获取当前文章的id
     var postId=event.currentTarget.dataset.id;
     
-    console.log(postId);
     wx.navigateTo({
       url: '../detail/detail?id='+postId,
     })

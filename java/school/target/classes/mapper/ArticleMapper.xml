@@ -13,14 +13,12 @@
             <result property="tag" column="tag" jdbcType="VARCHAR"/>
             <result property="createtime" column="createtime" jdbcType="TIMESTAMP"/>
             <result property="updatetime" column="updatetime" jdbcType="TIMESTAMP"/>
-            <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
-            <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
+            <result property="flag" column="flag" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,openid,title,
         content,image,tag,
-        createtime,updatetime,avatar,
-        nickname
+        createtime,updatetime,flag
     </sql>
 </mapper>

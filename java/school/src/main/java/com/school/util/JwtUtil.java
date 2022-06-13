@@ -1,18 +1,11 @@
 package com.school.util;
 
-import com.alibaba.fastjson.JSONObject;
-import com.auth0.jwt.JWT;
-import com.school.entity.Weixin;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class JwtUtil {
@@ -20,16 +13,14 @@ public class JwtUtil {
    private String secret= "NjYwQ0Y0N0M3ODhFODYwOUU2RDM1RTNDRkNENjQ1REE=";
    private long expire= 3600;
    private String header="token";
-        public String getToken (String openid, String session_key){
+        public String getToken (String redisKey){
             Date nowDate = new Date();
             //过期时间
             Date expireDate = new Date(nowDate.getTime() + expire * 1000);
-            Map<String,Object> maps = new HashMap<>();
-            maps.put("openid",openid);
-            maps.put("sessionKey",session_key);
+//            Map<String,Object> maps = new HashMap<>();
             return Jwts.builder()
                     .setHeaderParam("typ", "JWT")
-                    .setSubject(JSONObject.toJSONString(maps))
+                    .setSubject(redisKey)
                     .setIssuedAt(nowDate)
                     .setExpiration(expireDate)
                     .signWith(SignatureAlgorithm.HS512, secret)

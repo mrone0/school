@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.school.mapper.ArticleDtoMapper">
+    <select id="findArticleByTag" resultType="com.school.dto.ArticleDto">
+        select b.*,a.nick_name,a.avatar_url
+        from tb_weixin a join article b on a.open_id=b.openid where b.tag like concat('%',#{tag},'%')
+        <if test="flag=1" /> order by b.flag desc
+    </select>
+
+    <select id="findArticleById" resultType="com.school.dto.ArticleDto">
+        select b.*,a.nick_name,a.avatar_url
+        from tb_weixin a join article b on a.open_id=b.openid where b.id=#{id}
+    </select>
+
+    <select id="findArticlesByOpenid" resultType="com.school.dto.ArticleDto">
+        SELECT b.*,a.nick_name,a.avatar_url
+        FROM tb_weixin a JOIN article b  ON a.open_id=b.openid
+        LEFT JOIN star c ON
+        b.openid=c.openid AND b.id=c.aid
+        WHERE c.openid=#{openid}
+    </select>
+
+    <select id="findUserArticlesByOpenid" resultType="com.school.dto.ArticleDto">
+        SELECT b.*,a.nick_name,a.avatar_url
+        FROM tb_weixin a JOIN article b  ON a.open_id=b.openid
+        WHERE b.openid=#{openid}
+    </select>
+
+
+</mapper>

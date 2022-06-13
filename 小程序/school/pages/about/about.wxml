@@ -1,2 +1,2 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<web-view src="http://jwweb.scujcc.cn/"></web-view>

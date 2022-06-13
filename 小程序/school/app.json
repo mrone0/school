@@ -19,6 +19,8 @@
     "pages/about/about",
     "pages/mine/fabu/fabu",
     "pages/mine/comment/comment",
+    "pages/mine/shouchang/shouchang",
+    "pages/mine/post-item/post-item-tpl",
     "pages/detail/detail",
     "pages/post-item/post-item-tpl",
     "pages/post-comment/post-comment"

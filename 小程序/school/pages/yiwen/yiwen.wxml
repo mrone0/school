@@ -2,9 +2,9 @@
 <import src="../post-item/post-item-tpl.wxml"/>
 
 <view>
-  <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
+  <!-- <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
     <swiper-item><image src='' data-post-id='1'></image></swiper-item>
-  </swiper>
+  </swiper> -->
   <block wx:for="{{QuestionList}}" wx:key="id" wx:for-item="item" wx:for-index="idx">
   <view catchtap="onTapToDetail" data-id="{{item.id}}" >
     <template  is="postItemTpl" data="{{...item}}"></template>

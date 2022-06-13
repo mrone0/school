@@ -4,17 +4,17 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 import com.school.config.LocalDateTimeSerializerConfig;
+import com.school.dto.TemplateData;
 import com.school.entity.*;
-import com.school.entity.wx.WxMssVO;
+import com.school.dto.WxMssVO;
 import com.school.mapper.MessagepushMapper;
-import com.school.mapper.TokenMapper;
 import com.school.mapper.WeixinMapper;
-import com.school.service.impl.WxService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
@@ -37,8 +37,7 @@ public class CheckSignatureController {
     RedisTemplate redisTemplate;
 
     String redisKey = "";
-    @Autowired
-    TokenMapper tokenMapper;
+
 
     @Autowired
     WeixinMapper weixinMapper;
@@ -49,8 +48,8 @@ public class CheckSignatureController {
     LocalDateTimeSerializerConfig datetime = new LocalDateTimeSerializerConfig();
 
 
-    String AppId = "wx476cab07cfe094df";  //公众平台自己的appId
-    String AppSecret = "216084f0d7fd33b0cf1976afe8823023";  //AppSecret
+    String AppId = "";  //公众平台自己的appId
+    String AppSecret = "";  //AppSecret
 
 
     @RequestMapping("/token")
@@ -84,11 +83,11 @@ public class CheckSignatureController {
         String token = (String) redisTemplate.opsForValue().get(redisKey);
         Weixin weixin = new Weixin();
         QueryWrapper<Weixin> wrapper = new QueryWrapper<>();
-        wrapper.eq("open_id",openid);
+        wrapper.eq("open_id", openid);
         Weixin weixin1 = weixinMapper.selectOne(wrapper);
-        if(weixin1==null){
+        if (weixin1 == null) {
             return "null";
-        }else {
+        } else {
             String url = "https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=" + token;
             //拼接推送消息
             WxMssVO wxMssVO = new WxMssVO();
@@ -96,7 +95,7 @@ public class CheckSignatureController {
             wxMssVO.setTemplate_id(messagepush.getTemplateId());//模板id
             wxMssVO.setPage("pages/index/index");
 
-            Date date =new Date();
+            Date date = new Date();
             Map<String, TemplateData> m = new HashMap<>(5);
             m.put("thing2", new TemplateData(messagepush.getTitle()));
             m.put("date3", new TemplateData(datetime.GeLin(date)));
@@ -111,6 +110,20 @@ public class CheckSignatureController {
         }
 
 
+    }
+
+    @GetMapping("/dingyue")
+    public String GZH() {
+        String token = (String) redisTemplate.opsForValue().get(redisKey);
+        String url = " https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=" + token;
+        String industry_id1 = "39";
+        String industry_id2 = "39";
+        ResponseEntity<String> responseEntity = restTemplate.postForEntity(
+                url,
+                industry_id1,
+                String.class,
+                industry_id2);
+        return responseEntity.toString();
     }
 
 }

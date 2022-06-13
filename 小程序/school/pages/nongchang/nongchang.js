@@ -26,7 +26,7 @@ Page({
   },
   getFarmList(){
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/farm',
+      // url: 'http://127.0.0.1:8080/wx/farm',
       header: {
         "authorization": wx.getStorageSync("token")
       },

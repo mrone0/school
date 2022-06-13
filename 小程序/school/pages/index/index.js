@@ -22,7 +22,7 @@ Page({
   //获取轮播图数据的方法
   getSwiperList(){
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/active',
+      url: 'https://mrone.vip/wx/active',
       header: {
         "authorization": wx.getStorageSync("token")
       },
@@ -38,7 +38,7 @@ Page({
   //获取九宫格数据的方法
   getGridList(){
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/function',
+      url: 'https://mrone.vip/wx/function',
       method: 'GET',
       success: (res) =>{
         this.setData({

@@ -10,15 +10,15 @@
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="school" column="school" jdbcType="VARCHAR"/>
             <result property="number" column="number" jdbcType="BIGINT"/>
-            <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
             <result property="phone" column="phone" jdbcType="VARCHAR"/>
             <result property="address" column="address" jdbcType="VARCHAR"/>
             <result property="birthday" column="birthday" jdbcType="VARCHAR"/>
+            <result property="openid" column="openid" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         sid,snumber,username,
-        school,number,avatar,
-        phone,address,birthday
+        school,number,phone,
+        address,birthday,openid
     </sql>
 </mapper>

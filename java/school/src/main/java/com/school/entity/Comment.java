@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -29,16 +28,6 @@ public class Comment implements Serializable {
      * 唯一标识符
      */
     private String openid;
-
-    /**
-     * 头像
-     */
-    private String avatar;
-
-    /**
-     * 名字
-     */
-    private String nickname;
 
     /**
      * 评论内容
@@ -101,34 +90,6 @@ public class Comment implements Serializable {
     }
 
     /**
-     * 头像
-     */
-    public String getAvatar() {
-        return avatar;
-    }
-
-    /**
-     * 头像
-     */
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    /**
-     * 名字
-     */
-    public String getNickname() {
-        return nickname;
-    }
-
-    /**
-     * 名字
-     */
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    /**
      * 评论内容
      */
     public String getComment() {
@@ -185,8 +146,6 @@ public class Comment implements Serializable {
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getAid() == null ? other.getAid() == null : this.getAid().equals(other.getAid()))
             && (this.getOpenid() == null ? other.getOpenid() == null : this.getOpenid().equals(other.getOpenid()))
-            && (this.getAvatar() == null ? other.getAvatar() == null : this.getAvatar().equals(other.getAvatar()))
-            && (this.getNickname() == null ? other.getNickname() == null : this.getNickname().equals(other.getNickname()))
             && (this.getComment() == null ? other.getComment() == null : this.getComment().equals(other.getComment()))
             && (this.getImage() == null ? other.getImage() == null : this.getImage().equals(other.getImage()))
             && (this.getTime() == null ? other.getTime() == null : this.getTime().equals(other.getTime()));
@@ -199,8 +158,6 @@ public class Comment implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getAid() == null) ? 0 : getAid().hashCode());
         result = prime * result + ((getOpenid() == null) ? 0 : getOpenid().hashCode());
-        result = prime * result + ((getAvatar() == null) ? 0 : getAvatar().hashCode());
-        result = prime * result + ((getNickname() == null) ? 0 : getNickname().hashCode());
         result = prime * result + ((getComment() == null) ? 0 : getComment().hashCode());
         result = prime * result + ((getImage() == null) ? 0 : getImage().hashCode());
         result = prime * result + ((getTime() == null) ? 0 : getTime().hashCode());
@@ -216,8 +173,6 @@ public class Comment implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", aid=").append(aid);
         sb.append(", openid=").append(openid);
-        sb.append(", avatar=").append(avatar);
-        sb.append(", nickname=").append(nickname);
         sb.append(", comment=").append(comment);
         sb.append(", image=").append(image);
         sb.append(", time=").append(time);

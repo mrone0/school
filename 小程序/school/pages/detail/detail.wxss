@@ -76,3 +76,305 @@
 .comment image{
   transform: scale(.85);
 }
+page { 
+  height: 100%; 
+  overflow: hidden;
+   
+  }
+  /* 框架 */
+  
+  .talks-layer { 
+  position: absolute; 
+  bottom: -100%; 
+  height: 0; 
+  width: 100%; 
+  overflow: hidden; 
+  /* background-color: blue; */
+  }
+  .layer-white-space { 
+  height: 100%; 
+  width: 100%; 
+  background-color: #ccc; 
+  opacity: 0.5; 
+  /* background-color: green; */
+  }
+  .talks { 
+  position: absolute; 
+  height: 900rpx; 
+  width: 100%; 
+  bottom: 0rpx; 
+  background-color: #2f2d2e; 
+  border-top-left-radius: 3%; 
+  border-top-right-radius: 3%;
+  /* background-color: red; */
+  }
+  .talk-header { 
+  width: 100%; 
+  height: 70rpx; 
+  padding-top: 30rpx; 
+  text-align: center; 
+  }
+  .talk-body { 
+  height: 700rpx; 
+  } 
+  .talk-footer { 
+  position: absolute; 
+  bottom: 0rpx; 
+  width: 100%; 
+  height: 100rpx; 
+  background-color: #151515; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 30rpx; 
+  box-sizing: border-box;
+     }
+  .footer_boxmovein{
+  position: absolute; 
+  bottom: 400rpx; 
+  width: 100%; 
+  height: 100rpx; 
+  z-index:1000; 
+  background-color: #151515; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 30rpx; 
+  box-sizing: border-box; 
+  transition:all 0.6s;
+     }
+  .footer_box { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  }
+  /* 顶部元素 */ 
+  .talk-count { 
+  font-size: 26rpx; 
+  height: 40rpx; 
+  color: #6b696a;
+  }
+  
+  .talk-close {
+  position: absolute;
+  top: 30rpx; 
+  right: 40rpx; 
+  width: 40rpx; 
+  height: 40rpx;
+  }
+  /* 中部元素 */ 
+  .talk-item { 
+  display: flex; 
+  flex-direction: row; 
+  align-items: flex-start; 
+  width: 100%; 
+  color: white;
+  }
+  .talk-item-left { 
+  display: flex; 
+  flex-direction: row; 
+  margin: 20rpx 30rpx; 
+  }
+   
+  .talk-item-face { 
+  width: 80rpx; 
+  height: 80rpx;
+  border-radius: 50%;
+   
+  }
+    
+  .talk-item-right { 
+  width: 100%; 
+  border-bottom: solid 1rpx #6a6869; 
+  margin-right: 30rpx; 
+  /* margin-bottom: 30rpx; */ 
+  padding-bottom: 20rpx;
+  }
+   
+  .right-left { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 10px 0;
+   
+  }
+   
+  .talk-item-nickname { 
+  font-size: 28rpx; 
+  color: #aaa8a9; 
+  }
+   
+  .talk-item-time { 
+  font-size: 24rpx; 
+  color: #6a6869;
+   
+  }
+     .talk-item-content {
+  display: block; 
+  font-size: 30rpx;
+  margin-right: 30rpx; 
+  width: 92%; 
+  white-space: pre-line; 
+  word-break: break-all; 
+  word-wrap: break-word；;
+    }
+   
+  /* 底部元素 */ 
+  .talk-input { 
+  width: 100%; 
+  font-size: 30rpx; 
+  padding: 20rpx 0; 
+  padding-left: 30rpx; 
+  /* box-sizing: border-box; */ 
+  color: white; 
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+    }
+   
+  .fabu-input { 
+  background: red; 
+  font-size: 26rpx; 
+  color: #fff;
+  width: 127rpx; 
+  height: 60rpx; 
+  line-height: 60rpx;
+  text-align: center; 
+  border-radius: 30rpx; 
+  padding: 0;
+   
+  }
+  .emoji {
+  width: 60px; 
+  height: 30px; 
+  text-align: center; 
+  padding-top: 2px;
+  box-sizing: border-box; 
+  margin-right: 10px;
+  font-size: 20px;
+  }
+  .emoji-box {
+  position: absolute; 
+  bottom:-390rpx; 
+  left:0rpx; 
+  height: 200px; 
+  padding: 24px 16rpx; 
+  box-sizing: border-box; 
+  background:#000;
+     } 
+  .emoji-cell { 
+  width: 9.09%; 
+  height: 33px; 
+  display: inline-block;
+     }
+  .emoji-cell image { 
+  width: 23px;
+  height: 23px; 
+  padding: 5px;
+  border-radius: 3px;
+   
+  }
+   
+  .emoji-move-in { 
+  -webkit-animation: emoji-move-in 0.3s forwards; 
+  animation: emoji-move-in 0.3s forwards;
+   
+  }
+  .emoji-move-out { 
+  -webkit-animation: emoji-move-out 0.3s forwards; 
+  animation: emoji-move-out 0.3s forwards;
+   
+  }
+   
+  .no-emoji-move { 
+  -webkit-animation: none; 
+  animation: none;
+  }
+   
+  @-webkit-keyframes emoji-move-in { 
+  0% {
+  margin-bottom: -200px; 
+  }
+  100% {
+  margin-bottom: 0;
+   
+  } 
+  }
+   
+  @keyframes emoji-move-in { 
+  0% { 
+  margin-bottom: -200px;
+   
+  }
+  100% { 
+  margin-bottom: 0; 
+  }
+  }
+  @-webkit-keyframes emoji-move-out { 
+  0% { 
+  margin-bottom: 0;
+   
+  } 
+  100% { 
+  margin-bottom: -200px;
+  }
+  }
+  @keyframes emoji-move-out { 
+  0% { 
+  margin-bottom: 0;
+   
+  } 
+  100% { 
+  margin-bottom: -200px;
+  }
+  }
+   
+  @-webkit-keyframes pd-left-move { 
+  0% { 
+  padding-left: 5px;
+  }
+  100% { 
+  padding-left: 15px;
+   
+  }
+  } 
+   
+  @keyframes pd-left-move { 
+  0% { 
+  padding-left: 5px;
+   
+  } 
+   
+  100% { 
+  padding-left: 15px;
+  }
+   
+  }
+   
+  .cf-bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  right: 0; 
+  background-color: transparent; 
+  z-index: 99;
+   
+  }
+ .save{
+   position: absolute;
+   font-size: 30rpx;
+    right: 10%;
+  top: 515rpx;
+  height: 100rpx;
+  }
+ .star{
+   height: 50rpx;
+   margin-right: -50rpx;
+ }
+
+ .zan{
+  height: 50rpx;
+  margin-left: -660rpx;
+ }
+

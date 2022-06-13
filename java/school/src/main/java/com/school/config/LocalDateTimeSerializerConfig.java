@@ -24,7 +24,7 @@ public class LocalDateTimeSerializerConfig {
     }
 
     public String GeLin(Date date) throws ParseException {
-        SimpleDateFormat sDateFormat=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        SimpleDateFormat sDateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String format = sDateFormat.format(date);
         return format;
     }

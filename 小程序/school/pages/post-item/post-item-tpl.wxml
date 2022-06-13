@@ -1,7 +1,7 @@
 <template name="postItemTpl">
  <view class='post-container'>
     <view class='post-author-date'>
-      <image src='{{avatar}}'></image>
+      <image src='{{avatarurl}}'></image>
       <view>
       <text class='post-author'>{{nickname}}</text>
       <text class='post-date'>{{createtime}}</text>

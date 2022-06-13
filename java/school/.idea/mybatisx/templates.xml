@@ -63,8 +63,8 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="Weixin" />
-                  <option name="tableName" value="tb_weixin" />
+                  <option name="className" value="Fabulous" />
+                  <option name="tableName" value="fabulous" />
                 </TableUIInfo>
               </list>
             </option>

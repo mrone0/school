@@ -36,7 +36,7 @@ Page({
   getCommentList(){
     let aid=this.options.id
     wx.request({
-      url: 'http://127.0.0.1:8080/comment/detail',
+      url: 'https://mrone.vip/comment/detail',
       header: {
         "authorization": wx.getStorageSync("token")
       },

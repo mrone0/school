@@ -2,9 +2,25 @@
 <view class="container">
   <image class='head-image' src='{{articleList.image}}'></image>
   <text class='title'>{{articleList.title}}</text>
+
+<!-- 点赞 -->
+<view  class="save" >
+  <image class="zan" mode="heightFix" 
+  src="{{click?'/images/post/dianzan_1.png':'/images/post/dianzan.png'}}" bindtap="havezan" >
+ </image>
+</view>
+
+
+<!-- 收藏 -->
+<view  class="save" >
+  <image class="star" mode="heightFix" 
+  src="{{isClick?'/images/post/wx_app_star.png':'/images/post/wx_app_star@none.png'}}" bindtap="haveSave" ></image>
+ <!-- <text class="saveText">{{isClick?'未收藏':'已收藏'}}</text> -->
+</view>
+
     <view class='author-date'>
       <view class='author-box'>
-        <image class='avatar' src='{{articleList.avatar}}'></image>
+        <image class='avatar' src='{{articleList.avatarurl}}'></image>
         <text class='author'>{{articleList.nickname}}</text>
       </view>
       <text class='date'>{{articleList.createtime}}</text>
@@ -12,7 +28,69 @@
     <textarea class='detail'>{{articleList.content}}</textarea>
 </view>
 <!-- 评论区 -->
-<view class='tool'>
+<view> 
+<button bindtap='showTalks'>查看评论</button> 
+</view>
+ 
+<!-- 整个评论区 --> 
+<view class='talks-layer' animation='{{talksAnimationData}}'>
+<!-- 主要作用是点击后隐藏评论区 --> 
+<view class='layer-white-space' bindtap='hideTalks'>
+</view>
+ 
+ 
+<!-- 评论区 --> 
+<view class='talks' bindtouchstart='touchStart' bindtouchmove='touchMove'> 
+<!-- 评论头部 --> 
+<view class='talk-header'> 
+<view class='talk-count'>{{CommentList.length}} 条评论</view> 
+<image src='../../images/close.png' class='talk-close' bindtap='hideTalks'></image> 
+</view>
+ 
+ 
+<!-- 评论体 --> 
+<scroll-view class='talk-body' scroll-y="true" bindscrolltolower="onScrollLoad"> 
+<view class='talk-item' wx:for="{{CommentList}}" wx:key="*this"> 
+<view class='talk-item-left'>
+<image class='talk-item-face' src='{{item.avatarurl}}'></image>
+</view>
+<view class='talk-item-right'> 
+<view class='right-left'> 
+<text class='talk-item-nickname'>{{item.nickname}}</text> 
+<text class='talk-item-time'>{{item.time}}</text> 
+</view> 
+<text class='talk-item-content'>{{item.comment}}</text>
+</view> 
+</view> 
+</scroll-view>
+
+ 
+<!-- 评论底部 --> 
+<view class="cf-bg" catchtap="cemojiCfBg" style="display:{{cfBg ? 'block' : 'none'}}"></view> 
+<view class=" {{isShow ?'footer_boxmovein' : 'talk-footer'}}"> 
+<view class='footer_box'> 
+<view class="emoji iconfont icon-emoji" catchtap="emojiShowHide">
+<image src="../../images/black.png" style="width:20px;height:20px;" alt="iconsmile"/>
+</view> 
+<input class='talk-input' type='text' value='{{inputValue}}' bindblur="bindInputBlur" placeholder='有爱评论，说点儿好听的~'></input> 
+<button class='fabu-input' bindtap='faBu'>发布</button> 
+</view>
+ 
+<view wx:if='{{isShow}}' class="emoji-box {{isShow ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}"> 
+<scroll-view scroll-y="true" bindscroll="emojiScroll" style="height:200px"> 
+<block wx:for="{{emojis}}" wx:for-item="e" wx:key=""> 
+<view class="emoji-cell">
+<image class="touch-active" bindtap="emojiChoose" src="../../imgs/{{e.emoji}}.png" data-emoji="{{e.char}}" data-oxf="{{e.emoji}}"></image> 
+</view> 
+</block>
+</scroll-view> 
+</view> 
+</view> 
+</view> 
+</view>
+
+
+<!-- <view class='tool'>
  <view class='tool-item' data-post-id="{{post.postId}}">
        <image src='/images/post/wx_app_view.png'></image>
        <text>{{post.readingNum}}</text>
@@ -31,6 +109,4 @@
       <image wx:else src='/images/post/wx_app_collect.png'></image>
       <text>{{post.collectionNum}}</text>
     </view> 
-
-
- </view>
+ </view> -->

@@ -16,7 +16,6 @@
             <result property="appId" column="app_id" jdbcType="VARCHAR"/>
             <result property="isAuth" column="is_auth" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="loginTime" column="login_time" jdbcType="TIMESTAMP"/>
             <result property="sessionkey" column="sessionkey" jdbcType="VARCHAR"/>
     </resultMap>
 
@@ -24,7 +23,6 @@
         id,open_id,nick_name,
         gender,city,province,
         country,avatar_url,app_id,
-        is_auth,create_time,login_time,
-        sessionkey
+        is_auth,create_time,sessionkey
     </sql>
 </mapper>

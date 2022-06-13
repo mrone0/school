@@ -1,15 +1,11 @@
 package com.school.entity;
 
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.school.config.LocalDateTimeSerializerConfig;
-import lombok.SneakyThrows;
 
 import java.io.Serializable;
-import java.text.ParseException;
 import java.util.Date;
 
 /**
@@ -25,7 +21,7 @@ public class Article implements Serializable {
     private Integer id;
 
     /**
-     * 唯一标识
+     * 唯一标识符
      */
     private String openid;
 
@@ -60,14 +56,9 @@ public class Article implements Serializable {
     private Date updatetime;
 
     /**
-     * 头像
+     * 置顶
      */
-    private String avatar;
-
-    /**
-     * 名称
-     */
-    private String nickname;
+    private Integer flag;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -87,14 +78,14 @@ public class Article implements Serializable {
     }
 
     /**
-     * 唯一标识
+     * 唯一标识符
      */
     public String getOpenid() {
         return openid;
     }
 
     /**
-     * 唯一标识
+     * 唯一标识符
      */
     public void setOpenid(String openid) {
         this.openid = openid;
@@ -159,10 +150,8 @@ public class Article implements Serializable {
     /**
      * 
      */
-    public String getCreatetime() throws ParseException {
-        LocalDateTimeSerializerConfig config =new LocalDateTimeSerializerConfig();
-        String s = config.GeLin(createtime);
-        return s;
+    public Date getCreatetime() {
+        return createtime;
     }
 
     /**
@@ -187,34 +176,19 @@ public class Article implements Serializable {
     }
 
     /**
-     * 头像
+     * 置顶
      */
-    public String getAvatar() {
-        return avatar;
+    public Integer getFlag() {
+        return flag;
     }
 
     /**
-     * 头像
+     * 置顶
      */
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setFlag(Integer flag) {
+        this.flag = flag;
     }
 
-    /**
-     * 名称
-     */
-    public String getNickname() {
-        return nickname;
-    }
-
-    /**
-     * 名称
-     */
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    @SneakyThrows
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -235,11 +209,9 @@ public class Article implements Serializable {
             && (this.getTag() == null ? other.getTag() == null : this.getTag().equals(other.getTag()))
             && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
             && (this.getUpdatetime() == null ? other.getUpdatetime() == null : this.getUpdatetime().equals(other.getUpdatetime()))
-            && (this.getAvatar() == null ? other.getAvatar() == null : this.getAvatar().equals(other.getAvatar()))
-            && (this.getNickname() == null ? other.getNickname() == null : this.getNickname().equals(other.getNickname()));
+            && (this.getFlag() == null ? other.getFlag() == null : this.getFlag().equals(other.getFlag()));
     }
 
-    @SneakyThrows
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -252,8 +224,7 @@ public class Article implements Serializable {
         result = prime * result + ((getTag() == null) ? 0 : getTag().hashCode());
         result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
         result = prime * result + ((getUpdatetime() == null) ? 0 : getUpdatetime().hashCode());
-        result = prime * result + ((getAvatar() == null) ? 0 : getAvatar().hashCode());
-        result = prime * result + ((getNickname() == null) ? 0 : getNickname().hashCode());
+        result = prime * result + ((getFlag() == null) ? 0 : getFlag().hashCode());
         return result;
     }
 
@@ -271,12 +242,9 @@ public class Article implements Serializable {
         sb.append(", tag=").append(tag);
         sb.append(", createtime=").append(createtime);
         sb.append(", updatetime=").append(updatetime);
-        sb.append(", avatar=").append(avatar);
-        sb.append(", nickname=").append(nickname);
+        sb.append(", flag=").append(flag);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
     }
-
-
 }

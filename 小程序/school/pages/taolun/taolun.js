@@ -40,14 +40,17 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/taolun',
+      url: 'https://mrone.vip/wx/taolun',
       header: {
         "authorization": wx.getStorageSync("token")
       },
       method: 'GET',
+      data:{
+        current:this.data.page
+      },
       success: (res) =>{
         this.setData({
-          TaoLunList: res.data
+          TaoLunList: res.data.records
         })
       },
       complete: () =>{
@@ -129,9 +132,7 @@ Page({
 
   onTapToDetail:function(event){
     //获取当前文章的id
-    var postId=event.currentTarget.dataset.id;
-    
-    console.log(postId);
+    var postId=event.currentTarget.dataset.id; 
     wx.navigateTo({
       url: '../detail/detail?id='+postId,
     })

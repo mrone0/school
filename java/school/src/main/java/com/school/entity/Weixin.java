@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -69,11 +68,6 @@ public class Weixin implements Serializable {
      * 创建时间
      */
     private Date createTime;
-
-    /**
-     * 登陆时间
-     */
-    private Date loginTime;
 
     /**
      * sessionkey
@@ -238,20 +232,6 @@ public class Weixin implements Serializable {
     }
 
     /**
-     * 登陆时间
-     */
-    public Date getLoginTime() {
-        return loginTime;
-    }
-
-    /**
-     * 登陆时间
-     */
-    public void setLoginTime(Date loginTime) {
-        this.loginTime = loginTime;
-    }
-
-    /**
      * sessionkey
      */
     public String getSessionkey() {
@@ -288,7 +268,6 @@ public class Weixin implements Serializable {
             && (this.getAppId() == null ? other.getAppId() == null : this.getAppId().equals(other.getAppId()))
             && (this.getIsAuth() == null ? other.getIsAuth() == null : this.getIsAuth().equals(other.getIsAuth()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-            && (this.getLoginTime() == null ? other.getLoginTime() == null : this.getLoginTime().equals(other.getLoginTime()))
             && (this.getSessionkey() == null ? other.getSessionkey() == null : this.getSessionkey().equals(other.getSessionkey()));
     }
 
@@ -307,7 +286,6 @@ public class Weixin implements Serializable {
         result = prime * result + ((getAppId() == null) ? 0 : getAppId().hashCode());
         result = prime * result + ((getIsAuth() == null) ? 0 : getIsAuth().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        result = prime * result + ((getLoginTime() == null) ? 0 : getLoginTime().hashCode());
         result = prime * result + ((getSessionkey() == null) ? 0 : getSessionkey().hashCode());
         return result;
     }
@@ -329,7 +307,6 @@ public class Weixin implements Serializable {
         sb.append(", appId=").append(appId);
         sb.append(", isAuth=").append(isAuth);
         sb.append(", createTime=").append(createTime);
-        sb.append(", loginTime=").append(loginTime);
         sb.append(", sessionkey=").append(sessionkey);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

@@ -7,27 +7,21 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/university?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
-    username: root
+    username: mrone
     password: 123456
-
-    jpa:
-      database: mysql
-      show-sql: true
-      hibernate:
+    database: mysql
+    show-sql: true
+    hibernate:
         ddl-auto: update
-      freemarker:
-        suffix: .ftl
-        settings:
-          classic_compatible: true
-      redis:
-        database: 0
-        port: 6379
-        password: 123456
-        host: localhost
-      elasticsearch:
-        uris: 127.0.0.1:9200
-        username:
-        password:
+  freemarker:
+    suffix: .ftl
+    settings:
+    lassic_compatible: true
+  redis:
+    atabase: 0
+    port: 6379
+    password: 11355084
+    host: localhost
 
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -42,3 +36,7 @@ spring:
 weixin:
   appid: wx476cab07cfe094df
   secret: 216084f0d7fd33b0cf1976afe8823023
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl

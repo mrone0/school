@@ -1,10 +1,11 @@
 <!-- 引入文章列表组件 -->
-<import src="../../post-item/post-item-tpl.wxml"/>
+<import src="../post-item/post-item-tpl.wxml"/>
 
 <view>
   <block wx:for="{{FaBuList}}" wx:key="id" wx:for-item="item" wx:for-index="idx">
   <view catchtap="onTapToDetail" data-id="{{item.id}}" >
     <template  is="postItemTpl" data="{{...item}}"></template>
+    <!-- <image class="delete" src="../../../images/post/删除.png"></image> -->
   </view>
 </block>
 </view>

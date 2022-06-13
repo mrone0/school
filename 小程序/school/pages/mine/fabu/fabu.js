@@ -44,14 +44,17 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'http://127.0.0.1:8080/wx/user/fabu',
+      url: 'https://mrone.vip/wx/user/fabu',
       header: {
         "authorization": wx.getStorageSync("token")
+      },
+      data:{
+        current:this.data.page
       },
       method: 'GET',
       success: (res) =>{
         this.setData({
-          FaBuList: res.data
+          FaBuList: res.data.records
         })
       },
       complete: () =>{
@@ -151,5 +154,42 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  delete:function(event){
+    var id=event.currentTarget.dataset.id;
+    wx.showModal({
+      title: '提示',
+      content: '真的要删除吗',
+      cancelText:'假的',
+      confirmText:'真的要辣',
+      confirmColor:'#000000',
+      cancelColor:'#576b95',
+      success (res) {
+        if (res.confirm) {
+          wx.request({
+            url: 'https://mrone.vip/wx/user/fabu/delete',
+            method: 'GET',
+            header: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              "authorization": wx.getStorageSync("token")
+            },
+            data:{id:id},
+            success(res){
+              if(res.data.code==0){
+                wx.showToast({
+                  title: '删除成功',
+                })
+              }else{
+                wx.showToast({
+                  icon:'error',
+                  title: '删除失败',
+                })
+              }
+            }
+          })
+        } else if (res.cancel) {
+        }
+      }
+    })
   }
 })
