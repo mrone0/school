@@ -56,7 +56,7 @@ Page({
             addressInfo: res
           })
           wx.request({
-            url: 'https://mrone.vip/wx/userinfo',
+            url: '',
             method:'POST',
             header: {
               'Content-Type': 'application/x-www-form-urlencoded',

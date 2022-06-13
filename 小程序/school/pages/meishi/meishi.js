@@ -41,7 +41,7 @@ Page({
       title: '正在加载数据',
     })
     wx.request({
-      url: 'https://mrone.vip/wx/meishi',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },

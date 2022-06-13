@@ -36,7 +36,7 @@ Page({
   getCommentList(){
     let aid=this.options.id
     wx.request({
-      url: 'https://mrone.vip/comment/detail',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },

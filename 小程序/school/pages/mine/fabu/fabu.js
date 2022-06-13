@@ -44,7 +44,7 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'https://mrone.vip/wx/user/fabu',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },

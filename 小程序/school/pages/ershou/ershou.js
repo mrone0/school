@@ -39,7 +39,7 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'https://mrone.vip/wx/ershou',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },

@@ -398,7 +398,7 @@ ChooseCheckbox(e) {
               var key = Math.random().toString(36).substr(2); //生成一个随机字符串的文件名
 
               wx.request({
-                url: 'https://mrone.vip/wx/getToken',
+                url: '',
                 method: 'GET',
                 header: {
                   'Content-Type': 'application/x-www-form-urlencoded',
@@ -407,7 +407,7 @@ ChooseCheckbox(e) {
                 success:function(res){
                   token = res.data;
                   wx.uploadFile({
-                    url:'https://upload-z2.qiniup.com',
+                    url:'',
                     filePath: fileName,
                     name: 'file',
                     formData:{
@@ -420,12 +420,12 @@ ChooseCheckbox(e) {
                         var data=res.data;//返回的hash和key
                         if(typeof data==='string')data = JSON.parse(data.trim());//解压缩
                         var imglist = that.data.imglist
-                        imglist = 'http://img.mrone.vip/' + data.key,
+                        imglist = '' + data.key,
                         that.setData({
                           imglist:imglist
                         })
                         wx.request({
-                          url: 'https://mrone.vip/wx/article',
+                          url: '',
                           method: 'POST',
                           header: {
                             'Content-Type': 'application/x-www-form-urlencoded',

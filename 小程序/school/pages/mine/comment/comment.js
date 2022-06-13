@@ -27,7 +27,7 @@ Page({
 
   getUserCommentList(){
     wx.request({
-      url: 'https://mrone.vip/wx/user/comment',
+      url: '',
       method:'POST',
       header: {
         "authorization": wx.getStorageSync("token"),
@@ -103,7 +103,7 @@ Page({
       success (res) {
         if (res.confirm) {
           wx.request({
-            url: 'https://mrone.vip/wx/user/comment/del',
+            url: '',
             method: 'GET',
             header: {
               'Content-Type': 'application/x-www-form-urlencoded',

@@ -26,7 +26,7 @@ Page({
   },
   // getLibraryList(){
   //   wx.request({
-  //     url: 'https://mrone.vip/wx/library',
+  //     url: '',
   //     header: {
   //       "authorization": wx.getStorageSync("token")
   //     },

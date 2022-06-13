@@ -40,7 +40,7 @@ Page({
       isonloading: true
     })
     wx.request({
-      url: 'https:mrone.vip/wx/yishi',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },

@@ -57,7 +57,7 @@ Page({
   haveSave(e){
     let id=this.options.id
       wx.request({
-        url: 'https://mrone.vip/wx/star',
+        url: '',
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
           "authorization": wx.getStorageSync("token")
@@ -87,7 +87,7 @@ Page({
   havezan(e){
     let id=this.options.id
       wx.request({
-        url: 'https://mrone.vip/wx/zan',
+        url: '',
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
           "authorization": wx.getStorageSync("token")
@@ -111,7 +111,7 @@ Page({
   getArticleList(){
     let id=this.options.id
     wx.request({
-      url: 'https://mrone.vip/wx/detail/article',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },
@@ -127,7 +127,7 @@ Page({
   getCommentList(){
     let id=this.options.id;
     wx.request({
-      url: 'https://mrone.vip/comment/detail',
+      url: '',
       header: {
         "authorization": wx.getStorageSync("token")
       },
@@ -143,7 +143,7 @@ Page({
   getStar(){
     let id=this.options.id;
     wx.request({
-      url: 'https://mrone.vip/wx/show',
+      url: '',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
         "authorization": wx.getStorageSync("token")
@@ -166,7 +166,7 @@ Page({
   getzan(){
     let id=this.options.id;
     wx.request({
-      url: 'https://mrone.vip/wx/get/zan',
+      url: '',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded',
         "authorization": wx.getStorageSync("token")
@@ -291,7 +291,7 @@ if(!this.data.inputBiaoqing){
 faBu: function() {
   let id=this.options.id;
   wx.request({
-    url: 'https://mrone.vip/comment/add',
+    url: '',
     method:'POST',
     header: {
     'Content-Type': 'application/x-www-form-urlencoded',

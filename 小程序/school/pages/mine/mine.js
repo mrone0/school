@@ -31,7 +31,7 @@ Page({
         success:(res)=>{
           if(res.code){
             wx.request({
-              url: 'https://mrone.vip/wx/login',
+              url: '',
               method:'POST',
               header:{
                 'content-type':'application/x-www-form-urlencoded',
@@ -247,13 +247,13 @@ Page({
       tmplIds: ['dHxDyWWxBnRxKoFdW8SelOfSSbnrCvnjvUTtMF4Tij4'], //这里填入我们生成的模板id
       success(res) {
         wx.request({
-          url: 'https://mrone.vip/wx/token',
+          url: '',
           header: {
             "authorization": wx.getStorageSync('token')
           },
           success(res){
             wx.request({
-              url: 'https://mrone.vip/wx/push',
+              url: '',
               header: {
                 "authorization": wx.getStorageSync('token')
               },
