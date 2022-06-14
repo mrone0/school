@@ -34,8 +34,8 @@ spring:
 
 
 weixin:
-  appid: wx476cab07cfe094df
-  secret: 216084f0d7fd33b0cf1976afe8823023
+  appid: 
+  secret: 
 
 mybatis-plus:
   configuration:
