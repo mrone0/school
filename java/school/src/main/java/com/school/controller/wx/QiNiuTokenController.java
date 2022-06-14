@@ -29,8 +29,8 @@ public class QiNiuTokenController {
     // 获取 七牛云的 token
     @RequestMapping(value = "/getToken", method = RequestMethod.GET)
     public String getToken() {
-        String accessKey = "eJwHp3XCasOPzOtsuaIkwuXMEWeYev7_WQLRJVwD";
-        String secretKey = "jzmDc6Ffz7Cuj8unu7cskK3QBjEIYP-Zmn7c3Za3";
+        String accessKey = "";
+        String secretKey = "";
         String bucket = "mronei";
         long expireSeconds = 600;   //过期时间
         StringMap putPolicy = new StringMap();
@@ -48,7 +48,7 @@ public class QiNiuTokenController {
         UploadManager uploadManager = new UploadManager(cfg);
         String token = qiNiu.getToken();
         String key = qiNiu.getKey();
-        String url = "http://rbeyzl2ht.hn-bkt.clouddn.com/";//这里是你的域名地址
+        String url = "/";//这里是你的域名地址
         String filePath = "C:/Users/一字先生/Desktop/index.jpg";
         try {
             Response response = uploadManager.put(filePath, key, token);
