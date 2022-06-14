@@ -1,5 +1,6 @@
 package com.school.controller.wx;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
@@ -48,8 +49,8 @@ public class CheckSignatureController {
     LocalDateTimeSerializerConfig datetime = new LocalDateTimeSerializerConfig();
 
 
-    String AppId = "";  //公众平台自己的appId
-    String AppSecret = "";  //AppSecret
+    String AppId = "wx476cab07cfe094df";  //公众平台自己的appId
+    String AppSecret = "216084f0d7fd33b0cf1976afe8823023";  //AppSecret
 
 
     @RequestMapping("/token")
@@ -78,15 +79,17 @@ public class CheckSignatureController {
 
     @RequestMapping("/push")
     public String push(HttpServletRequest request) throws ParseException {
-        Object openid = request.getAttribute("openid");
+        Object key = request.getAttribute("redisKey");
+        Object json = redisTemplate.opsForValue().get(key);
+        JSONObject jsonObject = JSON.parseObject(String.valueOf(json));
+        String openid = String.valueOf(jsonObject.get("openid"));
         Messagepush messagepush = messagepushMapper.selectById(1L);
         String token = (String) redisTemplate.opsForValue().get(redisKey);
-        Weixin weixin = new Weixin();
         QueryWrapper<Weixin> wrapper = new QueryWrapper<>();
         wrapper.eq("open_id", openid);
-        Weixin weixin1 = weixinMapper.selectOne(wrapper);
-        if (weixin1 == null) {
-            return "null";
+        Weixin weixin = weixinMapper.selectOne(wrapper);
+        if (weixin == null) {
+            return null;
         } else {
             String url = "https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token=" + token;
             //拼接推送消息
@@ -106,11 +109,12 @@ public class CheckSignatureController {
             ResponseEntity<String> responseEntity =
                     restTemplate.postForEntity(url, wxMssVO, String.class);
             return responseEntity.getBody();
-
         }
-
-
     }
+
+
+
+
 
     @GetMapping("/dingyue")
     public String GZH() {
