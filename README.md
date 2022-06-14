@@ -4,6 +4,14 @@
 
 一款针对于大学学生的论讨类平台，由于不可抗因素，某些功能无法实现。开发者将尽全力保护用户个人隐私。
 
+## 项目技术栈
+
+前端：微信小程序
+
+后端：SpringBoot+Redis+MybatisPlus+Mysql+Jwt
+
+部署：Docker部署或直接服务器部署 Nginx + Mysql + Redis + SSL认证 
+
 ## 目标：
 
 - 为同学服务，为校园服务
