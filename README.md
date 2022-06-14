@@ -41,7 +41,6 @@
 - 部署：咨询**mr_onei@163.com**
 
 ## 演示地址：
-https://www.bilibili.com/video/BV1vg411R7rw
-
+https://www.bilibili.com/video/BV1q3411g71P
 
 感谢您的阅读，如果有帮助的话，能否给我一个star呢？
