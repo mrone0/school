@@ -44,8 +44,8 @@ public class WxLoginController {
     WxService wxService;
     String redisKey = "";
 
-    String AppId = "wx476cab07cfe094df";  //公众平台自己的appId
-    String AppSecret = "216084f0d7fd33b0cf1976afe8823023";  //AppSecret
+    String AppId = "";  //公众平台自己的appId
+    String AppSecret = "";  //AppSecret
 
     @PostMapping("login")
     public Map<String, Object> wxLogin(@RequestParam("code") String code) {
